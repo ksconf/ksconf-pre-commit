@@ -1,6 +1,6 @@
 # KSCONF Pre-commit hooks
 
-This repo provides a simple [pre-commit](https://pre-commit.com/) hook definition for the [ksconf](https://github.com/Kintyre/ksconf) project.
+This repo provides a simple [pre-commit](https://pre-commit.com/) hook definition for the [ksconf](https://github.com/ksconf/ksconf) project.
 
 ## Hooks
 
@@ -16,7 +16,7 @@ This repo provides a simple [pre-commit](https://pre-commit.com/) hook definitio
 
 ```yaml
 repos:
-  - repo: https://github.com/Kintyre/ksconf-pre-commit
+  - repo: https://github.com/ksconf/ksconf-pre-commit
     rev: v0.13.9
     hooks:
       - id: ksconf-check
@@ -30,7 +30,7 @@ For additional information, see [ksconf pre-commit hooks](https://ksconf.readthe
 
 ## Background
 
-Pre-commit hooks used to be directly supported by the main [ksconf](https://github.com/Kintyre/ksconf) repo.
+Pre-commit hooks used to be directly supported by the main [ksconf](https://github.com/ksconf/ksconf) repo.
 However, this lead to some complex dependency processing as the same repo housed a Python package, the Splunk app, and pre-commit hooks.
 Specifically, the `lxml` library, used by the xml formatting functionality, needs to be present for the pre-commit hook,
 but must be absent when packaged into a Splunk app, to avoid platform dependencies.

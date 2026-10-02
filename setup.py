@@ -10,5 +10,5 @@ setup(name="ksconf-pre-commit",
       ],
       description="Pre-commit hooks for ksconf",
       author="Lowell Alleman",
-      url="https://github.com/Kintyre/ksconf-pre-commit",
+      url="https://github.com/ksconf/ksconf-pre-commit",
       )
