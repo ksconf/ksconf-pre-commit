@@ -6,6 +6,10 @@ on:
 jobs:
   new_release:
     runs-on: ubuntu-latest
+    # Required to push the version bump commit and tag back to this repo.
+    # (The default GITHUB_TOKEN permissions for this repo are read-only.)
+    permissions:
+      contents: write
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -18,7 +22,7 @@ jobs:
 
           # Ensure git username to allow commit to occur
           git config --local user.name "github-actions[bot]"
-          git config --local user.email '${{ github.event.sender.id }}+${{ github.event.sender.login }}@users.noreply.github.com>'
+          git config --local user.email '${{ github.event.sender.id }}+${{ github.event.sender.login }}@users.noreply.github.com'
 
           ./new_release.sh ${{ github.event.client_payload.ref }}
 
